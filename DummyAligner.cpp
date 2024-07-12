@@ -31,7 +31,7 @@ DummyAligner::~DummyAligner()
 string
 DummyAligner::getIdentifier() const
 {
-    return "pianoaligner"; // Replace it with your plugin ID
+    return "dummyaligner"; // Replace it with your plugin ID
 }
 
 string
@@ -280,19 +280,6 @@ DummyAligner::getOutputDescriptors() const
     d.hasDuration = false;
     list.push_back(d);
 
-    // Old output (to be deleted later):
-    d.identifier = "chordonsets";
-    d.name = "Chord Onsets";
-    d.description = "Chord onsets by the dummy plugin";
-    d.unit = "";
-    d.hasFixedBinCount = true;
-    d.binCount = 0;
-    d.hasKnownExtents = false;
-    d.isQuantized = false;
-    d.sampleType = OutputDescriptor::VariableSampleRate;
-    d.hasDuration = false;
-    list.push_back(d);
-
     return list;
 }
 
@@ -439,7 +426,6 @@ DummyAligner::getRemainingFeatures()
         feature.label = info.toLabel();
         // feature.values.push_back(info.measureFraction.getValue());
         featureSet[0].push_back(feature);
-        featureSet[1].push_back(feature); // to be deleted
         frames.push_back(frame); // this value currently is not used anywhere, just for debugging.
         event++;
     }
