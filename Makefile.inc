@@ -25,7 +25,7 @@
 
 # Edit this to the base name of your plugin library
 #
-PLUGIN_LIBRARY_NAME := score-aligner
+PLUGIN_LIBRARY_NAME := dummy-aligner
 
 # Edit this to list the .cpp or .c files in your plugin project
 #
